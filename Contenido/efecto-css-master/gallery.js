@@ -3,7 +3,7 @@ const images = [
     {src: "img/1.jpeg", text: "Esos hermosos ojos q miraria durante horas "},
     {src: "img/5.jpeg", text: "Esa carita tan hermosa y tierna q consentiria toda mi vida"},
     {src: "img/6.jpeg", text: "Algo q haremos hoy"},
-    {src: "img/39.jpeg", text:"En realidad tu voz, desde el primer momento me dejo claro q no tendria soledad mientras estuvieras tu "},
+    {src: "img/39.jpg", text:"En realidad tu voz, desde el primer momento me dejo claro q no tendria soledad mientras estuvieras tu "},
     {src: "img/7.jpeg", text: "Tu pelo siempre me parece q es preciosooo, no importa como lo tengas, es muy lindo y cuidado"},
     {src: "img/8.jpeg", text: "El cielo aunque no se compare con tu belleza, siempre me recuerda a ti"},
     {src: "img/9.jpeg", text: "Aunque yo deberia ser ese, desde ahi me di cuenta de q eras muy linda como persona:3"},

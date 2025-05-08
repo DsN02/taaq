@@ -97,3 +97,54 @@ a {
   font-family: monospace;
 
 }
+/* -- Responsive Wrapper and Canvas -- */
+#wrap {
+  max-width: 1100px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+#canvas {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+#main {
+  overflow-x: hidden;
+}
+
+/* -- Mobile text container overrides -- */
+@media (max-width: 768px) {
+  #text {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+    padding: 1rem 0;
+  }
+  #code {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+  #clock-box {
+    position: static !important;
+    display: block;
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .say {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+/* -- Optional smaller font on very small devices -- */
+@media (max-width: 480px) {
+  body, a {
+    font-size: 12px;
+  }
+}

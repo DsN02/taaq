@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi amor</title>
+  <meta name="google-adsense-account" content="ca-pub-4704501585981299">
+</head>
+<body>
+<style>
+	@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap);
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+body  {
+	font-family: "Quicksand", sans-serif;
+	background: linear-gradient(to bottom right, #ffecec, #fff5f5, #ffebeb);
+	color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 1rem;
+	margin-top: 50px;
+	overflow: hidden;
+	-webkit-tap-highlight-color: transparent;
+}
+.envelope {
+	--duration: 1000ms;
+
+	--envelope-width: 300px;
+	--envelope-height: 175px;
+	--envelope-clr-bg: #d14d44;
+	--envelope-clr-txt: #fff;
+
+	--letter-clr-bg: #fff;
+	--letter-clr-text: #c0392b;
+	--letter-font-size: 1rem;
+
+	--front-font-size: 1rem;
+	--snowman-width: 50px;
+	--bells-width: 30px;
+
+	position: relative;
+	height: var(--envelope-height);
+	width: var(--envelope-width);
+	cursor: pointer;
+	transition: box-shadow 0.3s;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+@media (min-width: 720px) {
+	.envelope {
+		--envelope-width: 600px;
+		--envelope-height: 350px;
+		--letter-font-size: 1.6rem;
+		--snowman-width: 130px;
+		--bells-width: 60px;
+		--front-font-size: 1.25rem;
+	}
+}
+
+.envelope-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: grid;
+}
+
+.envelope-front {
+	color: var(--envelope-clr-txt);
+	display: grid;
+	place-content: center;
+	background-color: var(--envelope-clr-bg);
+	width: 100%;
+	height: 100%;
+	border-radius: 0.5em 0.5em 1.5em 1.5em;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+	position: relative;
+	z-index: 2;
+}
+.envelope-front .postage-stamp {
+	position: absolute;
+	top: 1em;
+	right: 0.5em;
+	width: 15%;
+}
+.envelope-front .address {
+	text-align: left;
+	font-size: var(--front-font-size);
+}
+.envelope-front .address > p > span:first-child {
+	font-family: system-ui;
+	font-weight: 200;
+}
+.envelope-front .address > p > span:last-of-type {
+	font-weight: 800;
+}
+
+/* Simula la solapa superior del sobre */
+.envelope-front::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+	background: #c24e46;
+	clip-path: polygon(0 0, 100% 0, 50% 100%);
+	border-radius: 0.5em 0.5em 0 0;
+	z-index: 3;
+}
+
+/* Carta oculta por defecto */
+.letter {
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	width: 90%;
+	height: 0;
+	opacity: 0;
+	font-size: var(--letter-font-size);
+	transform: translateX(-50%);
+	background: var(--letter-clr-bg);
+	z-index: 10;
+	padding: 0 3em;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 1.5em;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+	transition: height 0.8s cubic-bezier(.4,2,.6,1), opacity 0.5s;
+}
+
+/* Cuando está abierto, la carta sale y el sobre desaparece */
+.envelope.open .envelope-front {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.6s;
+}
+.envelope.open .letter {
+	height: auto !important;
+	min-height: 60vh;
+	max-height: 90vh;
+	opacity: 1;
+	overflow: auto;
+	transition: height 0.8s cubic-bezier(.4,2,.6,1), opacity 0.5s;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 100;
+	width: 90vw;
+	max-width: 600px;
+	padding: 3em 2em;
+	border-radius: 1.5em;
+	background: #fff;
+}
+.envelope.open {
+	z-index: 1000;
+}
+
+.letter > svg.snowman {
+	width: var(--snowman-width);
+}
+.letter svg.bells {
+	width: var(--bells-width);
+	color: orange;
+}
+.letter p {
+	margin: 0;
+	font-weight: bold;
+	width: 32ch;
+	color: var(--letter-clr-text);
+}
+
+.custom-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; 
+}
+.custom-image2 {
+    width: 150px;
+    height: 150px;
+    object-fit: contain; 
+}
+
+.highlight {
+    display: block; 
+    margin-top: 10px; 
+    font-size: 1.8rem;  
+    font-weight: bold; 
+}
+</style>
+<div class="envelope">
+
+	<div class="envelope-inner">
+
+		<div class="envelope-front">
+
+			<div class="postage-stamp ">
+				<svg fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" xml:space="preserve">
+					<path d="M253.98,257.652c0-8.568,8.568-17.748,17.136-18.361c-1.224-4.895-1.224-10.402-0.611-15.299 c-3.061,0.611-7.345,0-10.404-1.225c-6.12-3.061-9.792-9.18-9.792-15.912c0-9.18,7.956-20.807,17.136-21.42 c0-2.447,0.612-4.896,0.612-7.344s0.612-4.896,0.612-7.344c-7.956,3.061-17.137-4.283-18.973-12.24 c-1.836-9.792,4.284-17.748,12.853-21.42c-0.612-1.836-0.612-4.284-0.612-6.12c0-3.672,0-7.344,0.612-11.016 c-3.061,0-6.12-1.224-9.181-3.06c-4.283-3.06-6.731-7.344-7.344-12.24c0-0.612,0-1.836,0-2.448c0-9.792,8.568-15.3,17.136-16.524 c-0.611-3.672,0-7.956,0-11.628c0-3.06,0-6.12,0.612-9.18c-7.956,2.448-18.36-4.284-20.808-12.24 c-2.448-7.956,1.836-17.748,9.792-20.808c-1.225-3.06-1.225-6.732-1.225-10.404c0-3.06-0.611-6.732-0.611-9.792 c-9.792,12.24-39.168,4.284-40.393-9.18C205.632,3.672,200.124,1.836,195.84,0c0.611,9.18-7.956,17.748-17.137,17.748 c-9.18,0-16.523-6.732-18.359-15.3c-2.448,0-4.896,0-6.732-0.612c-2.448,0-4.896-0.612-7.956-1.224c0,4.284-2.448,9.18-5.508,12.24 c-3.672,3.672-9.18,6.12-14.076,6.12c-1.224,0-2.448,0-3.672-0.612c-5.508-1.224-12.24-4.896-14.076-11.016 c0-0.612,0-0.612,0-1.224c-4.896,0.612-11.016-0.612-15.912-2.448c-0.612,8.568-9.18,15.3-18.36,14.076 c-4.284-0.612-9.792-3.06-11.016-7.344c0-0.612,0-0.612,0-1.224c0,0,0,0.612-0.612,0.612c-3.672,3.06-8.568,2.448-12.852,1.836 c-1.224,0-2.448,0-3.672,0c1.224,0.612,1.836,1.836,2.448,2.448c3.672,4.896,5.508,11.016,3.06,17.136 c-3.06,8.568-14.076,12.24-22.032,9.18c0,1.224-0.612,1.836-0.612,3.06c-0.612,3.672-0.612,6.732-0.612,10.404 c9.792-1.224,22.644,1.224,23.868,12.852c0.612,5.508-3.06,11.016-8.568,12.852c-2.448,1.224-5.508,1.224-7.956,1.224 c-0.612,0-1.224,0-2.448-0.612c0,1.836,0,4.284,0,6.12c0,3.672,0.612,7.344-0.612,11.016l0,0c0.612,0,0.612-0.612,1.224-0.612 c11.628-3.672,23.256,7.344,19.584,18.972c-1.224,4.896-5.508,8.568-9.792,10.404c-3.672,1.224-6.732,1.836-10.404,1.836 c-0.612,1.836-0.612,3.06-1.224,4.896c-0.612,2.448-0.612,5.508-0.612,7.956c8.568-4.284,22.032-1.836,22.644,9.18 c0.612,9.179-10.404,24.48-21.42,23.869c0,1.223,0,3.059,0,4.283c0,2.447-0.612,4.896-0.612,7.957 c2.448-1.225,6.12-1.836,9.18-1.836c6.12,0.611,11.016,4.895,12.24,11.016c3.672,13.463-9.18,22.643-20.808,20.807 c-0.612,4.285-1.224,9.793-1.836,13.465c5.508-4.283,17.748-3.061,21.42,4.283c8.568,15.912-8.568,25.705-22.032,28.152 c0,4.896,0,10.404-1.224,15.301c7.344-4.285,18.36-4.285,25.704,0c7.956,4.896,11.628,13.463,11.628,22.031 c3.672-0.611,7.344-1.223,11.016-1.223c0-8.568,9.18-20.197,16.524-20.809c4.896-0.613,9.792,2.447,11.628,7.344 c1.836,4.283,1.224,9.791,3.06,14.076c0.612,0,1.224-0.611,1.836-0.611c3.06,0,4.896-0.613,7.344-1.838 c-0.612-1.836,0-3.672,0.612-6.119c1.224-4.896,5.508-9.18,10.404-10.404c11.016-3.061,19.584,4.896,22.645,14.688 c3.672-0.611,7.344-0.611,11.628-0.611c1.836,0,3.672,0,5.508,0.611c-2.448-8.566,4.284-18.971,13.464-19.584 c0.612,0,1.224,0,1.836,0c5.508,0,10.404,3.061,13.464,6.732c1.836,2.449,3.672,5.508,4.284,8.568c1.224,0,2.448,0,4.284,0 s3.672,0,5.508,0c1.224-7.955,9.792-14.076,17.748-14.688c7.956-0.613,15.912,3.672,19.584,11.016 c5.508-3.672,13.464-6.119,20.808-6.119c0-2.449,0-4.896,0-7.957C261.936,273.564,253.98,264.996,253.98,257.652z M243.576,266.221 c0,4.283-6.12,4.283-6.12,0l0,0c-3.672-77.725-4.896-155.449-9.792-233.173c-0.611,0.612-1.224,0.612-2.447,0.612 c-52.633,0-105.264,1.836-157.896,1.836c0,0,0,0-0.612,0c6.732,15.3,3.06,41.616,3.06,57.528c0,17.748,0,35.496,0,53.856 c0,39.78,0,79.56-1.224,119.341c0,1.836-1.224,3.059-2.448,3.672c50.796-12.854,115.668-14.076,167.688-6.732 c1.836,0.611,3.061,1.836,3.061,3.672s-1.225,4.283-3.672,4.896c-15.912,0.611-31.824,0.611-47.736,0.611 c-12.852,0-25.704,0-39.168,0.611c-26.316,1.225-53.856,4.285-79.56,0.613c-1.836,0-1.836-3.061,0-3.672 c-2.448,1.223-6.732,0-6.12-3.672c1.224-76.5-1.836-154.225,3.06-230.725c0-2.448,0-4.896,0.612-7.344c0-3.06,4.284-3.06,4.284,0 c0,0.612,0,1.224,0,1.224c19.584-2.448,39.168-3.672,59.364-4.896c33.048-1.224,66.097-1.224,98.532-0.612 c1.224,0,2.448,0.612,3.06,1.224c1.837-2.448,6.732-1.836,7.345,2.448c2.447,25.704,4.896,51.408,6.12,77.112 C244.8,158.508,246.024,212.977,243.576,266.221z M152.388,192.168c-3.06,1.836-6.732-0.611-7.344-3.061l0,0c0,0,0,0-0.612-0.611 c-30.6-7.957-63.036-45.9-55.692-77.112c3.06-12.852,15.3-26.316,29.988-22.032c12.852,3.672,22.032,19.584,28.152,32.436 c6.12-15.3,16.524-34.272,30.6-40.392c11.628-4.896,22.644,0,27.54,11.628C219.708,127.908,178.704,174.42,152.388,192.168z"></path>
+				</svg>
+			</div>
+
+			<div class="address">
+				<p><span>Para:</span> <span>Mi niña linda</span></p>
+				<p><span>De:</span> <span>Tu tonto esposo</span></p>
+			</div>
+
+		</div>
+
+		<div class="letter">
+
+			<img src="https://img.freepik.com/vector-premium/pulgar-dedos-imprimir-marca-huella-dactilar-amor-corazon_53500-1839.jpg" alt="love1" class="custom-image">
+		
+			<p><h6>Me presento. Me llamo Deiby Alejandro… aunque eso ya lo sabes, ¿cierto? Porque si estás leyendo esto, significa q decidimos estar juntos sin importar nada.<br><br>
+				Seguramente este mes no fue fácil. Han pasado muchas cosas, algunas duras, otras lindas… pero acá estamos. Juntos. A pesar de la distancia, a pesar del tiempo q hay entre nosotros jsjsjs. Y aunque estemos en otro país, seguimos construyendo eso q llamamos nuestra casita segura. Ese lugar donde quiero q puedas ser completamente tú, sin filtros, sin miedo…  donde yo puedo descansar de todo y todos sabiendo q tengo una esposa maravillosa q está para mí y me hace sentir amado de una manera muy linda.<br><br>
+				Me empezaste a consentir muchisimo y me estas mal acostumbrando(Me encantaaaaa), y no te imaginas lo feliz q me hace cada detalle tuyo. Pero también sabes q me encanta consentirte, cuidarte, y querer hacerte sentir igual de protegida y amada es mi objetivo.<br><br>
+				Este mes hablamos de vivir juntos, de hacer realidad todos esos planes q flotan entre llamadas, audios, risas y días en los q solo nos tenemos a la distancia. Pero es increíble cómo, incluso así, se siente tan fuerte. Se siente real. <br> <br> Se siente nuestro.....<br><br>
+				Y bueno… quiero q sepas algo. Te admiro profundamente. Por la mujer q eres, por lo q has hecho, por todo lo q has logrado para llegar a ser quien eres hoy. Sé q no ha sido fácil, sé q hay heridas, cansancio, dudas… pero también hay fuerza, hay luz, hay valentía en cada paso q das. Y yo estoy orgulloso, tan orgulloso de tenerte a mi lado. de pober ser pareja de alguien tan maravillosa, q se esfuerza y q se q llegara muy lejos en su vida, sabes me puso muy feliz q te emocionaras tanto por ese curso es muy bueno mi amor y estoy completamente orgulloso de lo mucho q te esfuerzas,ademas de q puedes despejarte un poco de tu trabajo y problemas , incluso si por ahora lo hacemos desde distintos puntos del mapa.<br><br>
+				Gracias por este mes. Por tu amor, por tu risa, por tus ganas. Gracias por quedarte. Gracias por elegirme.<br><br>
+				Feliz primer mes, mi maravillosa esposa. <br>
+				Te amo <br> Te adoro <br> Te quiero <br><h4> Te amodoroquiero🖤 </h4>
+				<span class="highlight"></span></p>
+			</h6>
+		</div>
+	</div>
+
+</div>
+<script>
+	document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+  
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.key === 'u') {
+      e.preventDefault();
+    }
+  });
+
+  // Al hacer click en el sobre, mostrar la carta y ocultar el sobre
+  document.querySelector('.envelope').addEventListener('click', function(e) {
+      if (!this.classList.contains('open')) {
+          this.classList.add('open');
+      }
+  });
+</script>
+</body>
+</html>

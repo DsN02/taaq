@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrazo Virtual</title>
+    <style>
+        body {
+            font-family: 'Comic Neue', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f9f3f3;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+        img {
+            max-width: 300px;
+            margin-bottom: 2rem;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .btn {
+            background-color: #ff9aa2;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ff6f7d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Un abrazo solo para ti</h1>
+    <img src="penguin.svg" alt="Abrazo de pingüino">
+    <div class="button-container">
+        <button class="btn" onclick="location.href='Rosa.html'">Una pequeña propuesta?</button>
+        <button class="btn" onclick="location.href='cartax.html'">Tal vez quieras leer mas tarde</button>
+    </div>
+</body>
+</html>

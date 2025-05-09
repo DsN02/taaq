@@ -23,7 +23,7 @@ const images = [
     {src: "img/34.jpeg", text: "De las primeras cosas q hablamos fue de nuestros gustos aunque nos enfocamos muchisimo en la naturaleza de repente hablamos de varias historias y lugares, solamente hablando de esos lugares especiales"},
     {src: "img/35.jpeg", text: "Aquellos lugares q en algun momento visitaremos juntos"},
     {src: "img/38.jpeg", text: "Lo q vendria a ser nuestra hija:3, esa gordita q reacciono al instante a tu hermosa voz"},
-    {src: "img/36.jpeg", text: "Texto para la imagen 36"},
+    {src: "img/36.jpeg", text: "El es alguien muy lindo, protector y jugueton:3 pero SIEMPRE encuentra como hacer males jsjsjjs amaria q lo conocieras es estresante pero lindo"},
     {src: "img/37.jpeg", text: "Nunca fue como estuvieras. Yo me enamore de algo mas. Algo mucho mas hermoso q cualquier cosa externa "},
     {src: "img/4.jpeg", text: "Este lugar se q es especial, no se si vayas a ir sola antes pero prometo q te llevare mi niña 🖤"},
     {src: "img/40.png", text: "Yo te amo.Pero sabes por q me enamore de ti?"},
